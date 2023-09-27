@@ -1,7 +1,9 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 import hidden_4
 
 if __name__ == "__main__":
-    hidden_module = [attr for attr in dir(hidden_4) if not attr.startswith('__')]
-    print(hidden_module)
+    hidden_module = dir(hidden_4)
+    for module in hidden_module:
+        if not module.startswith('__'):
+            print("{}".format(module))
