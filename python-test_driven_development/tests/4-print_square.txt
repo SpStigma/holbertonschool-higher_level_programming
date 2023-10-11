@@ -1,0 +1,33 @@
+# Description: Testing print_square function
+
+>>> print_square = __import__('your_script_name').print_square
+
+# Test Case 1: Printing a square with size 3
+>>> print_square(3)
+###
+###
+###
+
+# Test Case 2: Printing a square with size 5
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+# Test Case 3: Printing a square with size 0 (should not print anything)
+>>> print_square(0)
+>>> 
+
+# Test Case 4: Trying to print a square with negative size (should raise a ValueError)
+>>> print_square(-2)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+# Test Case 5: Trying to print a square with a non-integer size (should raise a TypeError)
+>>> print_square("2")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
