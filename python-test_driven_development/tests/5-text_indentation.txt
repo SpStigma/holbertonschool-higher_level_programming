@@ -1,0 +1,27 @@
+# Description: Testing text_indentation function
+
+>>> text_indentation = __import__('text_indentation').text_indentation
+
+# Test Case 1: Testing with a simple sentence
+>>> text_indentation("This is a simple sentence. This is another sentence.")
+This is a simple sentence.
+ This is another sentence.
+
+# Test Case 2: Testing with a question
+>>> text_indentation("What is your name?")
+What is your name?
+
+# Test Case 3: Testing with special characters and spaces
+>>> text_indentation("Hello! How are you doing?   I'm doing fine.")
+Hello!
+ How are you doing?
+   I'm doing fine.
+
+# Test Case 4: Testing with an empty string (should not print anything)
+>>> text_indentation("")
+
+# Test Case 5: Testing with a non-string input (should raise a TypeError)
+>>> text_indentation(123)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
