@@ -29,3 +29,27 @@ TypeError: a must be an integer or b must be an integer
 Traceback (most recent call last):
   ...
 TypeError: a must be an integer or b must be an integer
+
+# Test case 6: adding integer negative
+>>> add_integer(-10, 20)
+10
+>>> add_integer(10,-20)
+-10
+>>> add_integer(-10,-20)
+-30
+
+# Test case: adding only a
+>>> add_integer(-10)
+88
+
+# Test case: adding infinite
+>>> add_integer(10, float("inf"))
+Traceback (most recent call last):
+ ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float("inf"), 20)
+Traceback (most recent call last):
+ ...
+OverflowError: cannot convert float infinity to integer
+
+
