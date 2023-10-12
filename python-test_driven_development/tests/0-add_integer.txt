@@ -38,11 +38,11 @@ TypeError: a must be an integer or b must be an integer
 >>> add_integer(-10,-20)
 -30
 
-# Test case: adding only a
+# Test case 7: adding only a
 >>> add_integer(-10)
 88
 
-# Test case: adding infinite
+# Test case 8: adding infinite
 >>> add_integer(10, float("inf"))
 Traceback (most recent call last):
  ...
@@ -51,5 +51,16 @@ OverflowError: cannot convert float infinity to integer
 Traceback (most recent call last):
  ...
 OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('nan'), 3)
+Traceback (most recent call last):
+  ...
+ValueError: cannot convert float NaN to integer
+
+# test case 9: adding nothing
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a
+
 
 
