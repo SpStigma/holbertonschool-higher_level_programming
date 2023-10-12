@@ -75,5 +75,14 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 Traceback (most recent call last):
  ...
 TypeError: b must be an integer
+>>> add_integer(None, 10)
+Traceback (most recent call last):
+ ...
+TypeError: a must be an integer
 
+# Test case 12: add more argument
+>>> add_integer(10, 10, 10, 10)
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
 
