@@ -51,7 +51,7 @@ OverflowError: cannot convert float infinity to integer
 Traceback (most recent call last):
  ...
 OverflowError: cannot convert float infinity to integer
->>> add_integer(float('nan'), 3)
+>>> add_integer(float('NAN'), 3)
 Traceback (most recent call last):
   ...
 ValueError: cannot convert float NaN to integer
@@ -60,7 +60,15 @@ ValueError: cannot convert float NaN to integer
 >>> add_integer()
 Traceback (most recent call last):
   ...
-TypeError: add_integer() missing 1 required positional argument: 'a
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# Test case 10: adding float
+>>> add_integer(10.5, 15)
+25
+>>> add_integer(10, 15.5)
+25
+>>> add_integer(10.5, 15.5)
+25
 
 
 
