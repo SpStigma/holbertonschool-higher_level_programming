@@ -6,7 +6,7 @@
 def print_square(size):
     """
     Print a square
-    
+
     Args:
         size: The size of square
     """
