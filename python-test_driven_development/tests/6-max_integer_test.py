@@ -1,45 +1,49 @@
-# tests/6-max_integer_test.py
+#!/usr/bin/python3
 
+"""
+Module with unittests for the function `max_integer`.
+"""
+
+# Import the `unittest` module.
 import unittest
-from max_integer import max_integer
 
-class TestMaxInteger(unittest.TestCase):
+# Import the `max_integer` function from the module '6-max_integer'
+max_integer = __import__('6-max_integer').max_integer
 
-    def test_max_integer_empty_list(self):
-        result = max_integer([])
-        self.assertIsNone(result, "Expected None for an empty list")
 
-    def test_max_integer_positive_numbers(self):
-        result = max_integer([1, 3, 5, 2, 4])
-        self.assertEqual(result, 5, "Expected 5 for the list [1, 3, 5, 2, 4]")
+class test_max_integer(unittest.TestCase):
+    """
+    A test class for the 'max_integer' function.
 
-    def test_max_integer_negative_numbers(self):
-        result = max_integer([-1, -3, -5, -2, -4])
-        self.assertEqual(result, -1, "Expected -1 for the list [-1, -3, -5, -2, -4]")
+    This class defines a series of test cases to validate the behavior of the 'max_integer' function.
+    It includes tests for basic functionality, handling of various input scenarios, and error cases.
+    """
 
-    def test_max_integer_mixed_numbers(self):
-        result = max_integer([1, -3, 5, -2, 4])
-        self.assertEqual(result, 5, "Expected 5 for the list [1, -3, 5, -2, 4]")
+    # Test case for the basic functioning of the `max_integer` function.
+    def test_basic_functioning(self):
+        self.assertEqual(max_integer([2]), 2)
+        self.assertEqual(max_integer([2, 4, 6, 8]), 8)
+        self.assertEqual(max_integer([2, 6, 4]), 6)
+        self.assertEqual(max_integer([-2, -4, -6, -8]), -2)
 
-    def test_max_integer_duplicate_max(self):
-        result = max_integer([3, 3, 3, 3])
-        self.assertEqual(result, 3, "Expected 3 for the list [3, 3, 3, 3]")
+    # Test case for lists with multiple maximum values.
+    def test_multiple_maximum_values(self):
+        self.assertIn(max_integer([8, 2, 4, 6, 8, 8]), [8, 8, 8])
 
-    def test_max_integer_single_element(self):
-        result = max_integer([7])
-        self.assertEqual(result, 7, "Expected 7 for the list [7]")
+    # Test case for an empty list.
+    def test_empty_list(self):
+        self.assertEqual(max_integer([]), None)
 
-    def test_max_integer_empty_list_default_arg(self):
-        result = max_integer()
-        self.assertIsNone(result, "Expected None for an empty list (default argument)")
+    # Test case for when the function is called without arguments.
+    def test_no_arguments(self):
+        self.assertEqual(max_integer(), None)
 
-        def test_max_integer_beginning_of_list(self):
-        result = max_integer([10, 2, 3, 4, 5])
-        self.assertEqual(result, 10, "Expected 10 for the list [10, 2, 3, 4, 5]")
+    # Test case for a non-list argument.
+    def test_not_a_list(self):
+        with self.assertRaises(TypeError):
+            max_integer(2468)
 
-    def test_max_integer_end_of_list(self):
-        result = max_integer([1, 2, 3, 4, 100])
-        self.assertEqual(result, 100, "Expected 100 for the list [1, 2, 3, 4, 100]")
-
-if __name__ == '__main__':
-    unittest.main()
+    # Test case for a list with non-integer elements.
+    def test_list_is_not_int(self):
+        with self.assertRaises(TypeError):
+            max_integer(["2", 4, "6", 8], 8)
