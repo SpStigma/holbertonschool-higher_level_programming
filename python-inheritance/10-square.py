@@ -17,7 +17,8 @@ class Square(Rectangle):
         __size (int): The size of the square.
 
     Methods:
-        __init__(size): Initializes a new Square instance with the specified size.
+        __init__(size): Initializes a new Square
+        instance with the specified size.
 
     """
     def __init__(self, size):
