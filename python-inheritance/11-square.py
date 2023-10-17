@@ -63,4 +63,4 @@ class Square(Rectangle):
             >>> print(square)
             [Square] 5/5
     """
-        return "[Square] {} / {}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
