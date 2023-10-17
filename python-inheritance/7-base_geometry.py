@@ -27,6 +27,20 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """
+        Validates that a given value is a positive integer.
+
+        Args:
+            name (str): The name of the variable being validated.
+            value (int): The value to be validated.
+
+        Raises:
+            Type Error: If `name` is not a string or `value` is not an integer.
+            ValueError: If `value` is not greater than 0.
+
+        Returns:
+            None
+        """
         if not isinstance(name, str):
             raise TypeError(f"{name} must be a string")
         if type(value) is not int:
