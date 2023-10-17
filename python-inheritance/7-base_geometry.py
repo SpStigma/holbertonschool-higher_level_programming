@@ -41,8 +41,6 @@ class BaseGeometry:
         Returns:
             None
         """
-        if not isinstance(name, str):
-            raise TypeError(f"{name} must be a string")
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
