@@ -26,7 +26,6 @@ class BaseGeometry:
             None
         """
         raise Exception("area() is not implemented")
-    
 
     def integer_validator(self, name, value):
         if not isinstance(name, str):
