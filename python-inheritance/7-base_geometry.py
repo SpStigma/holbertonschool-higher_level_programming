@@ -13,7 +13,6 @@ class BaseGeometry:
     Methods:
         (None)
     """
-    pass
 
     def area(self):
         """
