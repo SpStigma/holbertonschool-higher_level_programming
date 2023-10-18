@@ -22,5 +22,4 @@ def load_from_json_file(filename):
         >>> data = load_from_json_file('example.json')
     """
     with open(filename, 'r', encoding='utf-8') as file:
-        data = json.loads(file)
-        return data
+        return json.load(file)
