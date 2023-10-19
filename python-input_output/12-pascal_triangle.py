@@ -23,7 +23,7 @@ def pascal_triangle(n):
         [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
     """
     if n <= 0:
-        raise ValueError("n must be a positive integer")
+        return []
 
     matrix = [[1]]
     """génère nouvelle ligne a chaque itération"""
