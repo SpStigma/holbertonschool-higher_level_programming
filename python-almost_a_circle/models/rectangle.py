@@ -221,3 +221,29 @@ class Rectangle(Base):
         """
         r = "[Rectangle] "
         return f"{r}({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        """
+        Update attributes of the Rectangle.
+
+        This method takes a variable number of arguments. The order
+        of arguments is important and should be as follows:
+        1st argument: id (int)
+        2nd argument: width (int)
+        3rd argument: height (int)
+        4th argument: x (int)
+        5th argument: y (int)
+
+    Args:
+        *args: Variable number of arguments in the specified order.
+        """
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
