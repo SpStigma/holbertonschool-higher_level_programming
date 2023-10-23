@@ -92,3 +92,17 @@ class Square(Rectangle):
             self.size = kwargs.get('size', self.size)
             self.x = kwargs.get('x', self.x)
             self.y = kwargs.get('y', self.y)
+
+    def to_dictionary(self):
+        """
+        Returns a dictionary representation of the Rectangle.
+
+        Returns:
+            dict: A dictionary containing id, width, height, x, and y.
+        """
+        return {
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y
+        }
