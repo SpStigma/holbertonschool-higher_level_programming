@@ -199,7 +199,13 @@ class Rectangle(Base):
         The number of '#' characters in each row is equal
         to the width of the rectangle.
         """
+        
+        for _ in range(0, self.x):
+            print()
+        
         for i in range(0, self.height):
+            for _ in range(0, self.y):
+                print(" ", end="")
             print("#" * self.width)
 
     def __str__(self):
