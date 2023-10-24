@@ -109,8 +109,7 @@ class Base:
         if cls.__name == "Rectangle":
             dummy_instance = cls(1, 2)
         if cls.__name__ == "Square":
-            dummy_instance = cls(1, 2)
+            dummy_instance = cls(1)
 
-        dummy_instance = cls(1, 2)
         dummy_instance.update(**dictionary)
         return dummy_instance
