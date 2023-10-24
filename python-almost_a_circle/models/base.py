@@ -127,10 +127,10 @@ class Base:
         filename = f"{cls.__name__}.json"
         try:
             with open(filename, 'r', encoding="utf-8") as file:
-                data = cls.from_json_string(file.read())
+                data = Base.from_json_string(file.read())
                 instances = []
                 for item in data:
-                    instance = cls.create(**item)
-                    instances.append(instance)
+                    instances.append(cls.create(**item))
+                return instances
         except FileNotFoundError:
             return []
