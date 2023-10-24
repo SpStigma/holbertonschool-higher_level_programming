@@ -128,7 +128,6 @@ class Base:
         try:
             with open(filename, 'r', encoding="utf-8") as file:
                 data = cls.from_json_string(file.read())
-                instances = [cls.create(**item) for item in data]
-                return instances
+                return [cls.create(**item) for item in data]
         except FileNotFoundError:
             return []
