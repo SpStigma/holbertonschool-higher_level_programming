@@ -106,10 +106,10 @@ class Base:
             A new instance of the class with attributes configured
             according to the dictionary.
         """
-        if cls.__name == "Rectangle":
-            dummy_instance = cls(1, 2)
-        if cls.__name__ == "Square":
-            dummy_instance = cls(1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
 
-        dummy_instance.update(**dictionary)
-        return dummy_instance
