@@ -118,7 +118,7 @@ class Base:
         Loads a list of instances from a JSON file.
 
         The filename is constructed using the class name:
-        "<Class name>.json" (e.g., "Rectangle.json").
+          "<Class name>.json" (e.g., "Rectangle.json").
         If the file doesn’t exist, an empty list is returned.
 
         Returns:
@@ -127,8 +127,7 @@ class Base:
         filename = f"{cls.__name__}.json"
         try:
             with open(filename, 'r') as file:
-                json_data = file.read()
-                data = cls.from_json_string(json_data)
+                data = cls.from_json_string(file.read())
                 instances = [cls.create(**item) for item in data]
                 return instances
         except FileNotFoundError:
