@@ -65,7 +65,7 @@ class Base:
             otherwise, None.
         """
         if list_objs is None:
-             list_objs = []
+            list_objs = []
 
         filename = f"{cls.__name__}.json"
         converted_objs = [obj.to_dictionary() for obj in list_objs]
