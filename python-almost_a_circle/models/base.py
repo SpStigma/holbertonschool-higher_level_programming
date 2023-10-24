@@ -64,7 +64,7 @@ class Base:
             list: An empty list if `list_objs` is None or empty;
             otherwise, None.
         """
-        if list_objs is None or len(list_objs) == 0:
+        if list_objs is None:
             return []
 
         filename = f"{cls.__name__}.json"
