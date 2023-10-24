@@ -126,7 +126,7 @@ class Base:
         """
         filename = f"{cls.__name__}.json"
         try:
-            with open(filename, 'r') as file:
+            with open(filename, 'r', encoding="utf-8") as file:
                 data = cls.from_json_string(file.read())
                 instances = [cls.create(**item) for item in data]
                 return instances
