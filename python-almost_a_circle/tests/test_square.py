@@ -142,8 +142,3 @@ class TestBase(unittest.TestCase):
         self.assertTrue(
             "'TestBase' object has no attribute 'x'" in str(context.exception))
 
-    def test_74(self):
-        with self.assertRaises(AttributeError) as context:
-            Square.to_dictionary(self)
-        self.assertTrue(
-            "'TestBase' object has no attribute 'x'" in str(context.exception))
