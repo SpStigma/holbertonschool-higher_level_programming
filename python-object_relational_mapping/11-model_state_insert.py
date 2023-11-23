@@ -15,8 +15,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
+    # Create a new State object
     state_name = State(name="Louisiana")
     session.add(state_name)
+    # Commit the transaction to the database
     session.commit()
     print(state_name.id)
     session.close()
