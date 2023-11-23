@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Script to define a SQLAlchemy model for a 'states' table in a MySQL database.
 
@@ -13,7 +14,7 @@ Make sure to replace the database connection details (username, password,
 database name) in the 'create_engine' line before running the script.
 """
 
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import declarative_base
 
 
@@ -22,9 +23,5 @@ Base = declarative_base()
 
 class State(Base):
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-
-
-engine = create_engine('mysql://root@localhost:3306/hbtn_0e_6_usa')
-Base.metadata.create_all(engine)
