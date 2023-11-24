@@ -7,7 +7,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from model_city import City 
+from model_city import City
 
 if __name__ == "__main__":
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     for city, state in cities:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
-    
+
     session.commit
 
     session.close()
